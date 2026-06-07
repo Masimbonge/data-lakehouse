@@ -1,0 +1,47 @@
+# Project 2: dbt schema — column tests & documentation
+# Masimbonge Portfolio
+# Edit: add/remove columns and tests to match your data
+
+version: 2
+
+sources:
+  - name: raw
+    database: MASIMBONGE_DB    # ← Edit: your Snowflake database name
+    schema: RAW
+    tables:
+      - name: weather_stage
+        description: "Raw weather data staged from S3"
+
+models:
+  - name: stg_weather
+    description: "Cleaned and renamed weather staging view"
+    columns:
+      - name: latitude
+        description: "Location latitude"
+        tests: [not_null]
+      - name: longitude
+        description: "Location longitude"
+        tests: [not_null]
+      - name: timezone
+        description: "IANA timezone string"
+        tests: [not_null]
+
+  - name: mart_weather_daily
+    description: "Analytics-ready daily weather observations"
+    columns:
+      - name: date_day
+        description: "Calendar date of observation"
+        tests: [not_null]
+      - name: observation_timestamp
+        description: "Full timestamp of the observation"
+        tests: [not_null]
+      - name: temperature_celsius
+        description: "Temperature in Celsius"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:   # ← Edit: min/max for your data
+              min_value: -60
+              max_value: 60
+      - name: temperature_fahrenheit
+        description: "Temperature in Fahrenheit (derived)"
+        tests: [not_null]

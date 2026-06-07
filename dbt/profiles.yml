@@ -1,0 +1,27 @@
+# dbt profiles.yml — Snowflake connection config
+# Edit: fill in your Snowflake account details
+# Place this file at ~/.dbt/profiles.yml OR keep it in the dbt/ folder
+
+masimbonge_lakehouse:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"       # e.g. abc123.us-east-1
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: ACCOUNTADMIN
+      database: MASIMBONGE_DB        # ← Edit: your database name
+      warehouse: COMPUTE_WH          # ← Edit: your warehouse name
+      schema: STAGING
+      threads: 4
+    prod:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: ACCOUNTADMIN
+      database: MASIMBONGE_DB
+      warehouse: COMPUTE_WH
+      schema: MARTS
+      threads: 8

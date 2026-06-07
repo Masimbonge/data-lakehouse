@@ -1,0 +1,24 @@
+# dbt project config
+# Edit: project name and model materialization strategies
+
+name: 'masimbonge_lakehouse'        # ← Edit: your project name
+version: '1.0.0'
+config-version: 2
+profile: 'masimbonge_lakehouse'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+models:
+  masimbonge_lakehouse:
+    staging:
+      +materialized: view             # Staging models are views (fast, no storage cost)
+      +schema: staging
+    marts:
+      +materialized: table            # Mart models are tables (fast queries)
+      +schema: marts
+
+vars:
+  start_date: '2024-01-01'           # ← Edit: your data start date
