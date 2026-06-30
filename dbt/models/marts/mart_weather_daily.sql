@@ -1,5 +1,4 @@
--- Project 2: Data Lakehouse — dbt Mart Model
--- Masimbonge Portfolio
+-- Data Lakehouse — dbt Mart Model
 -- This is the clean, analytics-ready table served to dashboards
 
 {{ config(
