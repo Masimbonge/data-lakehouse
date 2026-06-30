@@ -1,8 +1,7 @@
 # dbt project config
-# Edit: project name and model materialization strategies
 
-name: 'masimbonge_lakehouse'        # ← Edit: your project name
-version: '1.0.0'
+name: 'modern_data_lakehouse'
+version: '2.0.0'
 config-version: 2
 profile: 'masimbonge_lakehouse'
 
@@ -21,4 +20,4 @@ models:
       +schema: marts
 
 vars:
-  start_date: '2024-01-01'           # ← Edit: your data start date
+  start_date: '2026-01-01'
