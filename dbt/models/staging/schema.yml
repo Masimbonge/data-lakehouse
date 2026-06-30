@@ -1,12 +1,11 @@
-# Project 2: dbt schema — column tests & documentation
+# dbt schema — column tests & documentation
 # Masimbonge Portfolio
-# Edit: add/remove columns and tests to match your data
 
 version: 2
 
 sources:
   - name: raw
-    database: MASIMBONGE_DB    # ← Edit: your Snowflake database name
+    database: MASIMBONGE_DB
     schema: RAW
     tables:
       - name: weather_stage
