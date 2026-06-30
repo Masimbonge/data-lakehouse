@@ -1,5 +1,5 @@
 """
-Project 2: Modern Data Lakehouse — Main Airflow DAG
+Modern Data Lakehouse — Main Airflow DAG
 Masimbonge Portfolio
 Edit: sources, schedule, and transformations below
 """
