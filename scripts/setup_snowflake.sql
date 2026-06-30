@@ -1,6 +1,5 @@
--- Project 2: Snowflake Setup Script
+-- Snowflake Setup Script
 -- Run this once in your Snowflake worksheet
--- Edit: replace MASIMBONGE_DB with your preferred database name
 
 CREATE DATABASE IF NOT EXISTS MASIMBONGE_DB;
 USE DATABASE MASIMBONGE_DB;
