@@ -1,6 +1,5 @@
--- Project 2: Data Lakehouse — dbt Staging Model
+-- Data Lakehouse — dbt Staging Model
 -- Masimbonge Portfolio
--- Edit: column names to match your raw data schema
 
 {{ config(
     materialized='view',
@@ -16,7 +15,6 @@ with source as (
 
 renamed as (
     select
-        -- Edit these to match your actual column names
         parse_json($1):time::array           as time_series,
         parse_json($1):hourly::object        as hourly_data,
         parse_json($1):latitude::float       as latitude,
