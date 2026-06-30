@@ -1,6 +1,6 @@
 # 🏗 Modern Data Lakehouse — dbt + Airflow + Snowflake
 
-> **Masimbonge Portfolio — **
+> **Masimbonge Portfolio**
 > Data Engineering · ELT · Analytics
 
 Production-grade ELT pipeline: live API data → AWS S3 → Snowflake → dbt transformations → Grafana/Metabase dashboards. Includes data quality checks, lineage graphs, and full test coverage.
