@@ -1,4 +1,4 @@
-# Project 2: Docker Compose — Airflow + Postgres
+# Docker Compose — Airflow + Postgres
 # Masimbonge Portfolio
 # Run: docker-compose up -d
 
@@ -54,7 +54,7 @@ services:
     <<: *airflow-common
     command: webserver
     ports:
-      - "8080:8080"    # ← Edit: change 8080 if port is already in use
+      - "8080:8080" 
     restart: always
 
   airflow-scheduler:
